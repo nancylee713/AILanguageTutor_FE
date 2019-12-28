@@ -6,12 +6,12 @@
       <p>Question number: {{ qnum }}</p>
     </div>
     <div class='content'>
+      <button>Play</button>
+      <p>Type out the sentence</p>
       <div class='grammar-input'>
         <input type='text'/>
         <button>Submit</button>
       </div>
-      <button>Play</button>
-      <p>Type out the sentence</p>
     </div>
     <div class='next'>
       <p>Next Question</p>
@@ -22,8 +22,8 @@
 
 <script>
 export default {
-  // data: function() {
-
+  // data: {
+  //   qnum: String,
   // },
   // methods: {
   //   next: function() {
@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style>
+  .grammar-component {
+    display: flex;
+  }
+
   .previous {
     border: 1px solid black;
   }
