@@ -8,6 +8,7 @@
     <div class='content'>
       <div class='pronunciation-content'>
         <!-- <p>{{ prompt }}</p> -->
+        <p>Here is a sample prompt that will have to be changed later</p>
       </div>
       <button>Record</button>
       <p>Pronounce the sentence</p>
@@ -22,13 +23,38 @@
 <script>
 export default {
   // data: {
-  //   prompt: '',
+  //   prompt: String,
   // }
 };
 </script>
 
 <style>
-  .pronunciation-content {
-    border: 1px solid #000;
+  .pronunciation-component {
+    display: flex;
+  }
+
+  .previous {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    width: 33%;
+  }
+
+  .content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33%;
+  }
+
+  .next {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33%;
   }
 </style>
