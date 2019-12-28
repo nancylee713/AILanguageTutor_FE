@@ -2,19 +2,17 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/grammar"><Grammar/></router-link>
+      <router-link to="/grammar">Grammar</router-link> |
+      <router-link to="/pronunciation">Pronunciation</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <script>
-import Grammar from './components/Grammar.vue';
 
 export default {
-  components: {
-    Grammar,
-  },
+
 };
 </script>
 

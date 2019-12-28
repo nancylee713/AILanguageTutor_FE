@@ -25,6 +25,17 @@ export default {
   // data: function() {
 
   // },
+  // methods: {
+  //   next: function() {
+
+  //   },
+  //   previous: function() {
+
+  //   },
+  //   checkGrammar: function() {
+
+  //   },
+  // }
 };
 </script>
 
