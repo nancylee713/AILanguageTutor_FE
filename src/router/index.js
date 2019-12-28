@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Grammar from '../components/Grammar.vue';
 import Pronunciation from '../components/Pronunciation.vue';
+import User from '../components/User.vue';
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/pronunciation',
     name: 'pronunciation',
     component: Pronunciation,
+  },
+  {
+    path: '/user/:id',
+    name: 'user',
+    component: User,
   },
 ];
 
