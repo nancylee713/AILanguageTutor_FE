@@ -3,14 +3,14 @@
     <div class='previous'>
       <p>Previous Question</p>
       <button>Back button</button>
-      <p>Question number: {{ qnum }}</p>
+      <!-- <p>Question number: {{ qnum }}</p> -->
     </div>
     <div class='content'>
       <button>Play</button>
       <p>Type out the sentence</p>
       <div class='grammar-input'>
-        <input type='text'/>
-        <button>Submit</button>
+        <input v-model='response' type='text'/>
+        <button v-on:click='checkGrammar'>Submit</button>
       </div>
     </div>
     <div class='next'>
@@ -21,31 +21,23 @@
 </template>
 
 <script>
-// import { getQuestions, reviewGrammar } from '@/src/api/apiCalls.js'; 
+import { reviewGrammar } from '../api/apiCalls';
+
 export default {
-  // data: {
-  //   qnum: String,
-  //   questions: [],
-  //   response: String,
-  // },
-  // methods: {
-  //   getQuestions: async function() {
-         // try {
-
-         // } catch {
-
-         // }
-  //   },
-  //   next: function() {
-
-  //   },
-  //   previous: function() {
-
-  //   },
-  //   checkGrammar: function() {
-          // reviewGrammar();
-  //   },
-  // }
+  data() {
+    return {
+      // qnum: String,
+      // questions: [],
+      response: '',
+      // correctedGrammar: '',
+    };
+  },
+  methods: {
+    async checkGrammar() {
+      const correct = await reviewGrammar(this.response);
+      console.log(correct);
+    },
+  },
 };
 </script>
 
