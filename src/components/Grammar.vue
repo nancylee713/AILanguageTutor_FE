@@ -21,11 +21,21 @@
 </template>
 
 <script>
+// import { getQuestions, reviewGrammar } from '@/src/api/apiCalls.js'; 
 export default {
   // data: {
   //   qnum: String,
+  //   questions: [],
+  //   response: String,
   // },
   // methods: {
+  //   getQuestions: async function() {
+         // try {
+
+         // } catch {
+
+         // }
+  //   },
   //   next: function() {
 
   //   },
@@ -33,7 +43,7 @@ export default {
 
   //   },
   //   checkGrammar: function() {
-
+          // reviewGrammar();
   //   },
   // }
 };
