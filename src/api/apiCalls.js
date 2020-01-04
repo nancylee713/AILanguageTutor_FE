@@ -1,4 +1,4 @@
-export const getQuestion = async () => {
+export const getQuestions = async () => {
 
 };
 
