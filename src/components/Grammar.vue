@@ -24,23 +24,15 @@
 export default {
   // data: {
   //   qnum: String,
-  //   question: String,
+  //   questions: Array,
   //   response: String,
   // },
   // methods: {
-  //   next: async function() {
-          // try {
+  //   next: function() {
 
-          // } catch {
-
-          // }
   //   },
-  //   previous: async function() {
-          // try {
+  //   previous: function() {
 
-          // } catch {
-
-          // }
   //   },
   //   checkGrammar: function() {
           // try {
