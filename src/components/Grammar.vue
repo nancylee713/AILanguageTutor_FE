@@ -25,7 +25,7 @@
 export default {
   // data: {
   //   qnum: String,
-  //   questions: Array,
+  //   questions: [],
   //   response: String,
   // },
   // methods: {
