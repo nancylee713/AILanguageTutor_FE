@@ -24,16 +24,30 @@
 export default {
   // data: {
   //   qnum: String,
+  //   question: String,
+  //   response: String,
   // },
   // methods: {
-  //   next: function() {
+  //   next: async function() {
+          // try {
 
+          // } catch {
+
+          // }
   //   },
-  //   previous: function() {
+  //   previous: async function() {
+          // try {
 
+          // } catch {
+
+          // }
   //   },
   //   checkGrammar: function() {
+          // try {
 
+          // } catch {
+
+          // }
   //   },
   // }
 };
