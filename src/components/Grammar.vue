@@ -10,7 +10,7 @@
       <p>Type out the sentence</p>
       <div class='grammar-input'>
         <input v-model='userInput' type='text'/>
-        <button v-on:click='test'>Submit</button>
+        <button v-on:click='checkGrammar'>Submit</button>
         <p>{{ userInput }}</p>
       </div>
     </div>
@@ -30,14 +30,14 @@ export default {
       // qnum: String,
       // questions: [],
       userInput: '',
-      // correctedGrammar: '',
+      correctedGrammar: '',
     };
   },
   methods: {
-    checkGrammar: async () => {
-      console.log(this.userInput);
-      const corrected = await reviewGrammar();
-      console.log(corrected);
+    checkGrammar: function () {
+      reviewGrammar(this.userInput)
+        .then(data => this.correctedGrammar = data);
+    console.log(this.correctedGrammar);
     },
   },
 };
