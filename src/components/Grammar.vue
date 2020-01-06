@@ -9,8 +9,9 @@
       <button>Play</button>
       <p>Type out the sentence</p>
       <div class='grammar-input'>
-        <input v-model='response' type='text'/>
-        <button v-on:click='checkGrammar'>Submit</button>
+        <input v-model='userInput' type='text'/>
+        <button v-on:click='test'>Submit</button>
+        <p>{{ userInput }}</p>
       </div>
     </div>
     <div class='next'>
@@ -28,14 +29,15 @@ export default {
     return {
       // qnum: String,
       // questions: [],
-      response: '',
+      userInput: '',
       // correctedGrammar: '',
     };
   },
   methods: {
-    async checkGrammar() {
-      const correct = await reviewGrammar(this.response);
-      console.log(correct);
+    checkGrammar: async () => {
+      console.log(this.userInput);
+      const corrected = await reviewGrammar();
+      console.log(corrected);
     },
   },
 };
