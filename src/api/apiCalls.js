@@ -25,3 +25,20 @@ export const reviewGrammar = async (userSentence) => {
     throw new Error(error);
   }
 };
+
+export const textToSpeech = async (userInput) => {
+  body: {
+    audioConfig: {
+      audioEncoding: 'MP3',
+      pitch: 0,
+      speakingRate: 1,
+    },
+    input: {
+      text: userInput,
+    },
+    voice: {
+      languageCode: 'en-US',
+      name: 'en-US-Wavenet-D'
+    }
+  }
+};
