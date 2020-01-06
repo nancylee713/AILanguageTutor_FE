@@ -10,7 +10,7 @@
       <p>Type out the sentence</p>
       <div class='grammar-input'>
         <input v-model='userInput' type='text'/>
-        <button v-on:click.prevent='checkGrammar'>Submit</button>
+        <button v-on:click='test'>Submit</button>
         <p>{{ userInput }}</p>
       </div>
     </div>
