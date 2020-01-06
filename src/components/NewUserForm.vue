@@ -1,28 +1,22 @@
 <template>
     <section>
         <b-field label="Name">
-            <b-input value="Kevin Garvey"></b-input>
+            <b-input value=""></b-input>
         </b-field>
 
-        <b-field label="Email"
-            type="is-danger"
-            message="This email is invalid">
+        <b-field label="Email">
             <b-input type="email"
-                value="john@"
-                maxlength="30">
+                value=""
+                maxlength="40">
             </b-input>
         </b-field>
 
-        <b-field label="Username"
-            type="is-success"
-            message="This username is available">
-            <b-input value="johnsilver" maxlength="30"></b-input>
+        <b-field label="Username">
+            <b-input value="username here" maxlength="20"></b-input>
         </b-field>
 
-        <b-field label="Password"
-            type="is-warning"
-            :message="['Password is too short', 'Password must have at least 8 characters']">
-            <b-input value="123" type="password" maxlength="30"></b-input>
+        <b-field label="Password">
+            <b-input value="password here" type="password" maxlength="30"></b-input>
         </b-field>
 
         <b-field label="Subject">
@@ -31,5 +25,6 @@
                 <option value="2">Option 2</option>
             </b-select>
         </b-field>
+        <b-button type="is-primary" outlined>Submit</b-button>
     </section>
 </template>
