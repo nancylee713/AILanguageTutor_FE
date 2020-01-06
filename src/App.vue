@@ -1,19 +1,18 @@
+
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/grammar">Grammar</router-link> |
-      <router-link to="/pronunciation">Pronunciation</router-link> |
-      <router-link to="/user/:id">User</router-link>
-    </div>
+    <NavBar />
     <router-view/>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue';
 
 export default {
-
+  components: {
+    NavBar,
+  },
 };
 </script>
 
