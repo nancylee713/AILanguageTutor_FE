@@ -10,7 +10,6 @@
                 maxlength="40">
             </b-input>
         </b-field>
-
         <b-field label="Username">
             <b-input value="username here" maxlength="20"></b-input>
         </b-field>

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import NewUserForm from '@/components/NewUserForm.vue';
 
 export default {

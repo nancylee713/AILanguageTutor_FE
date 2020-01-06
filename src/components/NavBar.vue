@@ -26,10 +26,10 @@
             </b-navbar-item>
             <b-navbar-dropdown label="Account">
                 <b-navbar-item href="#">
-                    View User Account
+                    View Account
                 </b-navbar-item>
                 <b-navbar-item href="#">
-                    Log Out
+                    LogOut
                 </b-navbar-item>
             </b-navbar-dropdown>
         </template>
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'NavBar',
   props: {

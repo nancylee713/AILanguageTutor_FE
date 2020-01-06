@@ -6,6 +6,7 @@ import Pronunciation from '../components/Pronunciation.vue';
 import User from '../components/User.vue';
 import CreateUser from '../views/CreateUser.vue';
 
+
 Vue.use(VueRouter);
 
 const routes = [
