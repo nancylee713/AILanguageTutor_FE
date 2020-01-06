@@ -3,7 +3,7 @@ export const getQuestions = async () => {
 };
 
 export const reviewGrammar = async (userSentence) => {
-  const url = 'https://api.perfecttense.com/correct';
+  const url = process.env.VUE_APP_PERFECT_TENSE_ROUTE;
   const body = { text: userSentence, responseType: ['corrected', 'grammarScore', 'rulesApplied', 'offset', 'summary'] };
   const options = {
     method: 'POST',

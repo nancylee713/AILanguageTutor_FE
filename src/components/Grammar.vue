@@ -11,6 +11,7 @@
       <div class='grammar-input'>
         <input v-model='userInput' type='text'/>
         <button v-on:click.prevent='checkGrammar'>Submit</button>
+        <p>{{ userInput }}</p>
       </div>
     </div>
     <div class='next'>
