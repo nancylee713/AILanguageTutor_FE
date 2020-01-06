@@ -9,8 +9,8 @@ export const reviewGrammar = async (userSentence) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: process.env.PERFECT_TENSE_KEY,
-      AppAuthorization: process.env.PERFECT_TENSE_APP_AUTH,
+      Authorization: process.env.VUE_APP_PERFECT_TENSE_KEY,
+      AppAuthorization: process.env.VUE_APP_PERFECT_TENSE_APP_AUTH,
     },
     body: JSON.stringify(body),
   };
