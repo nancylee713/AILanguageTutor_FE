@@ -2,12 +2,6 @@
 <template>
   <div id="app">
     <NavBar />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/grammar">Grammar</router-link> |
-      <router-link to="/pronunciation">Pronunciation</router-link> |
-      <router-link to="/user/:id">User</router-link>
-    </div>
     <router-view/>
   </div>
 </template>

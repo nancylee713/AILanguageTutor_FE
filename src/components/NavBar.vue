@@ -10,17 +10,26 @@
         </template>
         <template slot="start">
             <b-navbar-item href="#">
-                Home
+                <router-link to='/'>
+                    Home
+                </router-link>
             </b-navbar-item>
             <b-navbar-item href="#">
-                Documentation
+                <router-link to='/grammar'>
+                    Grammar Tests
+                </router-link>
             </b-navbar-item>
-            <b-navbar-dropdown label="Info">
+            <b-navbar-item href="#">
+                <router-link to='/pronunciation'>
+                    Pronunciation Tests
+                </router-link>
+            </b-navbar-item>
+            <b-navbar-dropdown label="Account">
                 <b-navbar-item href="#">
-                    About
+                    View User Account
                 </b-navbar-item>
                 <b-navbar-item href="#">
-                    Contact
+                    Log Out
                 </b-navbar-item>
             </b-navbar-dropdown>
         </template>
@@ -47,7 +56,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-</style>

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Grammar from '../components/Grammar.vue';
 import Pronunciation from '../components/Pronunciation.vue';
 import User from '../components/User.vue';
+import CreateUser from '../views/CreateUser.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/user/:id',
     name: 'user',
     component: User,
+  },
+  {
+    path: '/create_user',
+    name: 'create_user',
+    component: CreateUser,
   },
 ];
 
