@@ -37,7 +37,6 @@ export default {
     checkGrammar: function () {
       reviewGrammar(this.userInput)
         .then(data => this.correctedGrammar = data);
-    console.log(this.correctedGrammar);
     },
   },
 };
