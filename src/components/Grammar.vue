@@ -46,7 +46,7 @@ export default {
     },
     nextQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
-      if(i !== this.questions.length) {
+      if(i !== this.questions.length - 1) {
         this.currentQuestion = this.questions[i + 1];
       }
     }
