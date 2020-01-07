@@ -20,7 +20,7 @@
     </div>
     <div class='next'>
       <p>Next Question</p>
-      <button>Next Button</button>
+      <button v-on:click='nextQuestion'>Next Button</button>
     </div>
   </section>
 </template>
@@ -44,11 +44,16 @@ export default {
         .then(data => this.correctedGrammar = data)
         .then(data => console.log(data))
     },
+    nextQuestion: function() {
+      const i = this.questions.indexOf(this.currentQuestion);
+      if(i !== this.questions.length) {
+        this.currentQuestion = this.questions[i + 1];
+      }
+    }
   },
   mounted() {
     // This is where the fetch of questions will run and set to local state.
     this.currentQuestion = this.questions[0];
-    console.log(this.currentQuestion);
   },
 };
 </script>
