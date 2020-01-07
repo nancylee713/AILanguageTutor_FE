@@ -10,7 +10,7 @@
       <div class='grammar-input'>
         <input v-model='userInput' type='text'/>
         <button v-on:click='checkGrammar'>Submit</button>
-        <p v-if='userInput'>{{ userInput }}</p>
+        <p v-if='userInput' class='user-revisions'>Your revisions: {{ userInput }}</p>
       </div>
       <div v-if='correctedGrammar' class='feedback'>
         <p>Grammar Score:{{ correctedGrammar.grammarScore }}</p>
@@ -40,8 +40,10 @@ export default {
   },
   methods: {
     checkGrammar: function() {
-      reviewGrammar(this.userInput)
-        .then(data => this.correctedGrammar = data);
+      if(this.userInput) {
+        reviewGrammar(this.userInput)
+          .then(data => this.correctedGrammar = data);
+      }
     },
     nextQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
@@ -74,10 +76,19 @@ export default {
 
   .previous {
     border: 1px solid black;
+    border-right: none;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding-bottom: 20px;
+    width: 25% !important;
   }
 
   .content {
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 0px !important;
+    width: 50% !important;
   }
 
   .grammar-input {
@@ -86,6 +97,12 @@ export default {
 
   .next {
     border: 1px solid black;
+    border-left: none;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding-bottom: 20px;
+    width: 25% !important;
   }
 
   input {
@@ -106,6 +123,7 @@ export default {
   }
 
   button:hover {
+    background-color: #714CD2;
     cursor: pointer;
   }
 </style>
