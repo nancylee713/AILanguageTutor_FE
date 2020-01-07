@@ -1,6 +1,7 @@
 <template>
   <div class="flash-cards">
     <p>cards!!!!</p>
+    <Cards cardName='dog' cardDefinition='definition' />
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import Cards from '@/components/Cards.vue';
 export default {
   name: 'flashcards',
   components: {
+      Cards,
   },
 };
 </script>
