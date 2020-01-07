@@ -6,7 +6,7 @@
     </div>
     <div class='content'>
       <p>Correct the error(s) in the following sentence:</p>
-      <h2>{{ currentQuestion }}</h2>
+      <h2>{{ currentQuestion.text }}</h2>
       <div class='grammar-input'>
         <input v-model='userInput' type='text'/>
         <button v-on:click='checkGrammar'>Submit</button>
@@ -31,7 +31,29 @@ import { getQuestions, reviewGrammar } from '../api/apiCalls';
 export default {
   data() {
     return {
-      questions: [{text: 'The man jump over the puddle.'}],
+      questions: [
+        {
+          "created_date": "Mon, 06 Jan 2020 14:52:54 GMT",
+          "id": 1,
+          "level": "beginner",
+          "text": "Have you make dinner yet?",
+          "updated_date": "Mon, 06 Jan 2020 14:52:54 GMT"
+        },
+        {
+          "created_date": "Mon, 06 Jan 2020 15:07:57 GMT",
+          "id": 2,
+          "level": "beginner",
+          "text": "How many biscuits is there in the tin?",
+          "updated_date": "Mon, 06 Jan 2020 15:07:57 GMT"
+        },
+        {
+          "created_date": "Mon, 06 Jan 2020 15:07:57 GMT",
+          "id": 3,
+          "level": "beginner",
+          "text": "A car is fast than a bicycle.",
+          "updated_date": "Mon, 06 Jan 2020 15:07:57 GMT"
+        }
+      ],
       currentQuestion: '',
       userInput: '',
       correctedGrammar: '',
@@ -47,17 +69,17 @@ export default {
     nextQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== this.questions.length - 1) {
-        this.currentQuestion = this.questions[i + 1].text;
+        this.currentQuestion = this.questions[i + 1];
       }
     },
     previousQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== 0) {
-        this.currentQuestion = this.questions[i - 1].text;
+        this.currentQuestion = this.questions[i - 1];
       }
     }
   },
-  
+
   // Not sure if the two of these methods can be used in conjunction to get the fetch in local state. They are fetching but not being set properly
 
 
@@ -70,7 +92,7 @@ export default {
     getQuestions()
       .then(res => this.questions = res)
       .catch(error => console.error(error));
-    console.log(this.questions.length)
+    this.currentQuestion = this.questions[0];
   }
 };
 </script>
