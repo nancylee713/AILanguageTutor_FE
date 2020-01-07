@@ -95,6 +95,11 @@ export default {
     width: 90%;
   }
 
+  .user-revisions {
+    font-size: 1.5em;
+    padding: 15px;
+  }
+
   .next {
     border: 1px solid black;
     border-left: none;
@@ -106,9 +111,12 @@ export default {
   }
 
   input {
+    border-radius: 5px;
     display: block;
+    font-size: .9em;
     height: 40px;
     margin: 10px;
+    padding-left: 5px;
     width: 100%;
   }
 
@@ -119,6 +127,7 @@ export default {
     color: white;
     font-size: .9em;
     height: 40px;
+    margin: 10px;
     width: 150px;
   }
 
