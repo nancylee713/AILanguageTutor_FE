@@ -26,6 +26,28 @@ export const reviewGrammar = async (userSentence) => {
   }
 };
 
+export const getFlashCard = async (vocabWord) => {
+  const url = `https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${vocabWord}`;
+  const options = {
+    method: 'GET',
+    headers: {
+      'x-rapidapi-host': 'lingua-robot.p.rapidapi.com',
+      'x-rapidapi-key': '5f79c75fb8msh667198defcb0eb4p19a6e3jsnd10cd6e77216'
+    }
+  };
+
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error('Could not retrieve thi flashcard.');
+    }
+    const data = response.json();
+    console.log(data);
+  } catch (error){
+    throw new Error(error);
+  }
+}
+
 export const textToSpeech = async (userInput) => {
   // Working on google authorization to use the text to speech api
 
