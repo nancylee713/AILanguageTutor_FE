@@ -91,9 +91,11 @@ export default {
 <style>
   .grammar-component {
     display: flex;
+    height: 95vh;
   }
 
   .previous {
+    align-items: center;
     border: 1px solid black;
     border-right: none;
     display: flex !important;
@@ -106,6 +108,7 @@ export default {
   .content {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    padding-top: 8%;
     margin: 0px !important;
     width: 50% !important;
   }
@@ -120,6 +123,7 @@ export default {
   }
 
   .next {
+    align-items: center;
     border: 1px solid black;
     border-left: none;
     display: flex !important;
