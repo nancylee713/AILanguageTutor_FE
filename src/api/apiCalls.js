@@ -1,5 +1,5 @@
 export const getQuestions = async () => {
-
+  
 };
 
 export const reviewGrammar = async (userSentence) => {
@@ -24,24 +24,4 @@ export const reviewGrammar = async (userSentence) => {
   } catch (error) {
     throw new Error(error);
   }
-};
-
-export const textToSpeech = async (userInput) => {
-  // Working on google authorization to use the text to speech api
-
-  
-  // body: {
-  //   "audioConfig": {
-  //     "audioEncoding": "MP3",
-  //     "pitch": 0,
-  //     "speakingRate": 1,
-  //   },
-  //   "input": {
-  //     "text": userInput,
-  //   },
-  //   "voice": {
-  //     "languageCode": "en-US",
-  //     "name": "en-US-Wavenet-D",
-  //   }
-  // }
 };
