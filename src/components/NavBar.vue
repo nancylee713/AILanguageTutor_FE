@@ -20,8 +20,8 @@
                 </router-link>
             </b-navbar-item>
             <b-navbar-item href="#">
-                <router-link to='/pronunciation'>
-                    Pronunciation Tests
+                <router-link to='/flashcards'>
+                    Flash Cards
                 </router-link>
             </b-navbar-item>
             <b-navbar-dropdown label="Account">
