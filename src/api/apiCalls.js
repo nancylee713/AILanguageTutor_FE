@@ -27,13 +27,13 @@ export const reviewGrammar = async (userSentence) => {
 };
 
 export const getFlashCard = async (vocabWord) => {
-  const url = `https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${vocabWord}`;
+  const url = `process.env.VUE_APP_LINGUA_ROUTE${vocabWord}`;
   const options = {
     method: 'GET',
     headers: {
-      'x-rapidapi-host': 'lingua-robot.p.rapidapi.com',
-      'x-rapidapi-key': '5f79c75fb8msh667198defcb0eb4p19a6e3jsnd10cd6e77216'
-    }
+      'x-rapidapi-host': process.env.VUE_APP_RAPIDAPI_HOST,
+      'x-rapidapi-key': process.env.VUE_APP_RAPIDAPI_KEY,
+    },
   };
 
   try {
@@ -42,28 +42,8 @@ export const getFlashCard = async (vocabWord) => {
       throw new Error('Could not retrieve thi flashcard.');
     }
     const data = response.json();
-    console.log(data);
+    return data;
   } catch (error){
     throw new Error(error);
   }
-}
-
-export const textToSpeech = async (userInput) => {
-  // Working on google authorization to use the text to speech api
-
-  
-  // body: {
-  //   "audioConfig": {
-  //     "audioEncoding": "MP3",
-  //     "pitch": 0,
-  //     "speakingRate": 1,
-  //   },
-  //   "input": {
-  //     "text": userInput,
-  //   },
-  //   "voice": {
-  //     "languageCode": "en-US",
-  //     "name": "en-US-Wavenet-D",
-  //   }
-  // }
 };
