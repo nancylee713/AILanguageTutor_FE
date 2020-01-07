@@ -1,5 +1,15 @@
 export const getQuestions = async () => {
-  
+  const url = process.env.VUE_APP_GRAMMAR_QUESTIONS_ROUTE;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('There was an error loading grammar questions.');
+    }
+    const questions = response.json();
+    return questions;
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export const reviewGrammar = async (userSentence) => {
