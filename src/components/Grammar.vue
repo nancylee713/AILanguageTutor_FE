@@ -26,13 +26,13 @@
 </template>
 
 <script>
-import { reviewGrammar } from '../api/apiCalls';
+import { getQuestions, reviewGrammar } from '../api/apiCalls';
 
 export default {
   data() {
     return {
       // qnum: String,
-      questions: ['Here is a sentence that has one spilling error.', 'The black cat fliez over the red roof.', 'The last sentence is a fun one that iz just the beez neez.'],
+      questions: [{text: 'The man jump over the puddle.'}],
       currentQuestion: '',
       userInput: '',
       correctedGrammar: '',
@@ -41,26 +41,29 @@ export default {
   methods: {
     checkGrammar: function() {
       reviewGrammar(this.userInput)
-        .then(data => this.correctedGrammar = data)
-        .then(data => console.log(data))
+        .then(data => this.correctedGrammar = data);
     },
     nextQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== this.questions.length - 1) {
-        this.currentQuestion = this.questions[i + 1];
+        this.currentQuestion = this.questions[i + 1].text;
       }
     },
     previousQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== 0) {
-        this.currentQuestion = this.questions[i - 1];
+        this.currentQuestion = this.questions[i - 1].text;
       }
     }
   },
-  mounted() {
-    // This is where the fetch of questions will run and set to local state.
-    this.currentQuestion = this.questions[0];
+  beforeMount() {
+    getQuestions()
+      .then(res => this.questions = res)
+      .catch(error => console.error(error));
   },
+  mounted() {
+    this.currentQuestion = this.questions[0].text
+  }
 };
 </script>
 
@@ -77,7 +80,32 @@ export default {
     border: 1px solid black;
   }
 
+  .grammar-input {
+    width: 90%;
+  }
+
   .next {
     border: 1px solid black;
+  }
+
+  input {
+    display: block;
+    height: 40px;
+    margin: 10px;
+    width: 100%;
+  }
+
+  button {
+    background-color: #7957d5;
+    border-color: transparent;
+    border-radius: 5px;
+    color: white;
+    font-size: .9em;
+    height: 40px;
+    width: 150px;
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 </style>
