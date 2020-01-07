@@ -2,7 +2,7 @@
   <section class='grammar-component'>
     <div class='previous'>
       <p>Previous Question</p>
-      <button>Back button</button>
+      <button v-on:click='previousQuestion'>Back button</button>
     </div>
     <div class='content'>
       <p>Correct the error(s) in the following sentence:</p>
@@ -14,8 +14,8 @@
       </div>
       <div v-if='correctedGrammar' class='feedback'>
         <p>Grammar Score:{{ correctedGrammar.grammarScore }}</p>
-        <p>Corrected Sentence: {{ correctedGrammar.corrected }}</p>
         <p>Number of Corrections: {{ correctedGrammar.summary.numCorrections }}</p>
+        <p>Corrected Sentence: {{ correctedGrammar.corrected }}</p>
       </div>
     </div>
     <div class='next'>
@@ -48,6 +48,12 @@ export default {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== this.questions.length - 1) {
         this.currentQuestion = this.questions[i + 1];
+      }
+    },
+    previousQuestion: function() {
+      const i = this.questions.indexOf(this.currentQuestion);
+      if(i !== 0) {
+        this.currentQuestion = this.questions[i - 1];
       }
     }
   },
