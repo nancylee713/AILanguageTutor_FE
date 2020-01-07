@@ -79,15 +79,6 @@ export default {
       }
     }
   },
-
-  // Not sure if the two of these methods can be used in conjunction to get the fetch in local state. They are fetching but not being set properly
-
-
-  // beforeMount() {
-  //   getQuestions()
-  //     .then(res => this.questions = res)
-  //     .catch(error => console.error(error));
-  // },
   mounted() {
     getQuestions()
       .then(res => this.questions = res)
