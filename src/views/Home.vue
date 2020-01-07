@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <p>This is going to be the home page for the application</p>
+    <h1>AI Language Learner</h1>
+    <h2>Welcome to AI Language Learner where we are commited to assisting your language learning needs!</h2>
   </div>
 </template>
 

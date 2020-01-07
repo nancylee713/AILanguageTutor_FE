@@ -31,7 +31,6 @@ import { getQuestions, reviewGrammar } from '../api/apiCalls';
 export default {
   data() {
     return {
-      // qnum: String,
       questions: [{text: 'The man jump over the puddle.'}],
       currentQuestion: '',
       userInput: '',
@@ -58,13 +57,16 @@ export default {
       }
     }
   },
-  beforeMount() {
+  // beforeMount() {
+  //   getQuestions()
+  //     .then(res => this.questions = res)
+  //     .catch(error => console.error(error));
+  // },
+  mounted() {
     getQuestions()
       .then(res => this.questions = res)
       .catch(error => console.error(error));
-  },
-  mounted() {
-    this.currentQuestion = this.questions[0].text
+    console.log(this.questions.length)
   }
 };
 </script>
