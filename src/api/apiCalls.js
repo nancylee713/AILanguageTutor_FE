@@ -1,5 +1,15 @@
 export const getQuestions = async () => {
-
+  const url = process.env.VUE_APP_GRAMMAR_QUESTIONS_ROUTE;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('There was an error loading grammar questions.');
+    }
+    const questions = response.json();
+    return questions;
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export const reviewGrammar = async (userSentence) => {
@@ -46,24 +56,4 @@ export const getFlashCard = async (vocabWord) => {
   } catch (error){
     throw new Error(error);
   }
-}
-
-export const textToSpeech = async (userInput) => {
-  // Working on google authorization to use the text to speech api
-
-  
-  // body: {
-  //   "audioConfig": {
-  //     "audioEncoding": "MP3",
-  //     "pitch": 0,
-  //     "speakingRate": 1,
-  //   },
-  //   "input": {
-  //     "text": userInput,
-  //   },
-  //   "voice": {
-  //     "languageCode": "en-US",
-  //     "name": "en-US-Wavenet-D",
-  //   }
-  // }
 };
