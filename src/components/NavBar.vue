@@ -59,3 +59,9 @@ export default {
   },
 };
 </script>
+
+<style lang='scss'>
+.buttons {
+    margin: 0 10px;
+}
+</style>
