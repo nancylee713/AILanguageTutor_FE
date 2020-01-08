@@ -46,7 +46,6 @@ export const getFlashCard = async (vocabWord) => {
       "x-rapidapi-key": process.env.VUE_APP_RAPIDAPI_KEY,
     }
   };
-  console.log(options)
 
   try {
     const response = await fetch(url, options);
@@ -56,7 +55,6 @@ export const getFlashCard = async (vocabWord) => {
     const data = await response.json();
     return data;
   } catch (error){
-    console.log('hi')
     throw new Error(error);
   }
 };

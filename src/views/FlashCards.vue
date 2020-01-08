@@ -15,21 +15,21 @@ export default {
   components: {
       Cards,
   },
+  data() {
+    return {
+      flashcards: []
+    }
+  },
   methods: {
-    getDefinition: function (word) {
-      getFlashCard(word)
-      .then(data => console.log(data))
-      .catch(error => console.error(error))
+    async getDefinition (word) {
+      return await getFlashCard(word)
     }
   },
   mounted(){
-    console.log(vocabWords)
-    return vocabWords.map(word => {
-      let data = this.getDefinition(word);
-      console.log(data)
-      return(
-        <Cards cardName='dog' cardDefinition='dog'/>
-      )
+    vocabWords.map(word => {
+      this.getDefinition(word)
+      .then(response => this.flashcards.push(response))
+      console.log(this.flashcards)
     })
   }
 };
