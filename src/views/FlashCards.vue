@@ -1,8 +1,14 @@
 <template>
-  <div class="flash-cards">
-    <p>cards!!!!</p>
-    <Cards cardName='dog' cardDefinition='definition' />
-  </div>
+  <section class='flashcard-component'>
+    <div class='previous-card'>
+      <p>Previous Question</p>
+      <button v-on:click='previousFlashCard'>Previous Card</button>
+    </div>
+    <div class='cards-container'>
+    </div>
+    <div class='next-card'>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -17,13 +23,18 @@ export default {
   },
   data() {
     return {
-      flashcards: []
+      flashcards: [],
+      currentCard: 0
     }
   },
   methods: {
-    async getDefinition (word) {
-      return await getFlashCard(word)
-    }
+    getDefinition(word) {
+      return getFlashCard(word)
+    },
+    nextFlashCard() {
+      
+    } 
+
   },
   mounted(){
     vocabWords.map(word => {
