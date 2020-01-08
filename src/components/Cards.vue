@@ -9,8 +9,8 @@
 export default {
     name: 'Cards',
     props: {
-        cardName: String,
-        cardDefinition: String,
+        cardData: Object,
+        cardIndex: Number,
     },
 };
 </script>

@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss">
 html {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 #app {

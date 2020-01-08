@@ -38,7 +38,6 @@ export const reviewGrammar = async (userSentence) => {
 
 export const getFlashCard = async (vocabWord) => {
   const url = `${process.env.VUE_APP_LINGUA_ROUTE}${vocabWord}`;
-  console.log(url)
   const options = {
     method: 'GET',
     headers: {
