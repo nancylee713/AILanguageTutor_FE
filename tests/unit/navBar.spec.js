@@ -1,11 +1,11 @@
 import { shallowMount } from '@vue/test-utils';
-import Cards from '@/components/Cards.vue';
+import NavBar from '@/components/NavBar.vue';
 
-describe('Cards Component', () => {
+describe('NavBar Component', () => {
   let wrapper; 
 
   beforeEach(() => {
-    wrapper = shallowMount(Cards);
+    wrapper = shallowMount(NavBar);
   });
 
   it('should match snapshot', () => {
