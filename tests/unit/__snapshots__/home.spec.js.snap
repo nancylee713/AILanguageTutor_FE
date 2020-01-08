@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component should match snapshot 1`] = `
+<div class="home">
+  <h1>AI Language Learner</h1>
+  <h2 class="welcome">Welcome to AI Language Learner where we are commited to assisting your language learning needs!</h2>
+</div>
+`;
