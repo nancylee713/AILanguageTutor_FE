@@ -6,6 +6,7 @@ export const getQuestions = async () => {
       throw new Error('There was an error loading grammar questions.');
     }
     const questions = response.json();
+    console.log(questions);
     return questions;
   } catch (error) {
     throw new Error(error);
