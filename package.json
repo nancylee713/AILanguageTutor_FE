@@ -8,7 +8,8 @@
     "test:unit": "vue-cli-service test:unit",
     "test": "jest",
     "test-watch": "npm run test -- --watch",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
     "buefy": "^0.8.9",
