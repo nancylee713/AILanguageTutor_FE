@@ -1,11 +1,11 @@
 import { shallowMount } from '@vue/test-utils';
-import Grammar from '@/components/Grammar.vue';
+import FlashCards from '@/components/FlashCards.vue';
 
-describe('Grammar Component', () => {
+describe('FlashCards Component', () => {
   let wrapper; 
 
   beforeEach(() => {
-    wrapper = shallowMount(Grammar);
+    wrapper = shallowMount(FlashCards);
   });
 
   it('should match snapshot', () => {
