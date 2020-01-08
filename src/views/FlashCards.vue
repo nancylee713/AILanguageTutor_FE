@@ -1,12 +1,20 @@
 <template>
   <section class='flashcard-component'>
     <div class='previous-card'>
-      <p>Previous Question</p>
       <button v-on:click='previousFlashCard'>Previous Card</button>
     </div>
     <div class='cards-container'>
+      <div class='card'>
+        <h3 class='card-title'>{{flashcards[cardIndex].entries[0].entry}}</h3>
+        <p class='card-def'>Definition: {{flashcards[cardIndex].entries[0].lexemes[0].senses[0].definition}}</p>
+        <p class='card-def'>Part of Speech: {{flashcards[cardIndex].entries[0].interpretations[0].partOfSpeech}}</p>
+        <audio controls>
+        <source src='http://audio.linguarobot.io/en/dog-us.mp3'>
+        </audio>  
+      </div>
     </div>
     <div class='next-card'>
+      <button v-on:click='nextFlashCard'>Next Card</button>
     </div>
   </section>
 </template>
@@ -24,7 +32,7 @@ export default {
   data() {
     return {
       flashcards: [],
-      currentCard: 0
+      cardIndex: 5,
     }
   },
   methods: {
@@ -32,7 +40,14 @@ export default {
       return getFlashCard(word)
     },
     nextFlashCard() {
-      
+      if (this.cardIndex < this.flashcards.length) {
+        this.cardIndex++
+      }
+    },
+    previousFlashCard() {
+      if (this.cardIndex > 0) {
+        this.cardIndex--
+      }
     } 
 
   },
@@ -40,8 +55,26 @@ export default {
     vocabWords.map(word => {
       this.getDefinition(word)
       .then(response => this.flashcards.push(response))
-      console.log(this.flashcards)
     })
   }
 };
 </script>
+
+<style lang='scss'>
+.flashcard-component {
+  display: flex;
+  height: 70vh;
+  justify-content: space-evenly;
+
+  .cards-container {
+    width: 60%;
+    border: solid 2px black;
+  }
+  .previous-card,
+  .next-card{
+    margin: auto;
+  }
+}
+
+
+</style>
