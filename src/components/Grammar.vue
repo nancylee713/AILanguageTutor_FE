@@ -65,18 +65,21 @@ export default {
         reviewGrammar(this.userInput)
           .then(data => this.correctedGrammar = data);
       }
+      this.userInput = '';
     },
     nextQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== this.questions.length - 1) {
         this.currentQuestion = this.questions[i + 1];
       }
+      this.userInput = '';
     },
     previousQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== 0) {
         this.currentQuestion = this.questions[i - 1];
       }
+      this.userInput = '';
     }
   },
   mounted() {
@@ -91,9 +94,11 @@ export default {
 <style>
   .grammar-component {
     display: flex;
+    height: 100vh;
   }
 
   .previous {
+    align-items: center;
     border: 1px solid black;
     border-right: none;
     display: flex !important;
@@ -106,6 +111,9 @@ export default {
   .content {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0px !important;
     width: 50% !important;
   }
@@ -120,6 +128,7 @@ export default {
   }
 
   .next {
+    align-items: center;
     border: 1px solid black;
     border-left: none;
     display: flex !important;
