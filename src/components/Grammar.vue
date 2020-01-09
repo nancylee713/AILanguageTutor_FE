@@ -65,18 +65,21 @@ export default {
         reviewGrammar(this.userInput)
           .then(data => this.correctedGrammar = data);
       }
+      this.userInput = '';
     },
     nextQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== this.questions.length - 1) {
         this.currentQuestion = this.questions[i + 1];
-      }
+      } 
+      this.userInput = '';
     },
     previousQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== 0) {
         this.currentQuestion = this.questions[i - 1];
       }
+      this.userInput = '';
     }
   },
   mounted() {
@@ -109,6 +112,9 @@ export default {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     padding-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0px !important;
     width: 50% !important;
   }

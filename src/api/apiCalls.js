@@ -19,8 +19,8 @@ export const reviewGrammar = async (userSentence) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: process.env.VUE_APP_PERFECT_TENSE_KEY,
-      AppAuthorization: process.env.VUE_APP_PERFECT_TENSE_APP_AUTH,
+      'Authorization': process.env.VUE_APP_PERFECT_TENSE_KEY,
+      'AppAuthorization': process.env.VUE_APP_PERFECT_TENSE_APP_AUTH,
     },
     body: JSON.stringify(body),
   };
@@ -37,21 +37,21 @@ export const reviewGrammar = async (userSentence) => {
 };
 
 export const getFlashCard = async (vocabWord) => {
-  const url = `process.env.VUE_APP_LINGUA_ROUTE${vocabWord}`;
+  const url = `${process.env.VUE_APP_LINGUA_ROUTE}${vocabWord}`;
   const options = {
     method: 'GET',
     headers: {
-      'x-rapidapi-host': process.env.VUE_APP_RAPIDAPI_HOST,
-      'x-rapidapi-key': process.env.VUE_APP_RAPIDAPI_KEY,
-    },
+      "x-rapidapi-host": process.env.VUE_APP_RAPIDAPI_HOST,
+      "x-rapidapi-key": process.env.VUE_APP_RAPIDAPI_KEY,
+    }
   };
 
   try {
     const response = await fetch(url, options);
     if (!response.ok) {
-      throw new Error('Could not retrieve thi flashcard.');
+      throw new Error('Could not retrieve this flashcard.');
     }
-    const data = response.json();
+    const data = await response.json();
     return data;
   } catch (error){
     throw new Error(error);

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grammar Component should match snapshot 1`] = `
+<section class="grammar-component">
+  <div class="previous">
+    <p>Previous Question</p> <button>Back button</button>
+  </div>
+  <div class="content">
+    <p>Correct the error(s) in the following sentence:</p>
+    <h2>Have you make dinner yet?</h2>
+    <div class="grammar-input"><input type="text"> <button>Submit</button>
+      <!---->
+    </div>
+    <!---->
+  </div>
+  <div class="next">
+    <p>Next Question</p> <button>Next Button</button>
+  </div>
+</section>
+`;
