@@ -25,11 +25,11 @@
                 </router-link>
             </b-navbar-item>
             <b-navbar-dropdown class='items' label="Account">
-                <b-navbar-item href="#">
+                <b-navbar-item class='acct-button' href="#">
                     View Account
                 </b-navbar-item>
                 <b-navbar-item href="#">
-                    LogOut
+                    Log Out
                 </b-navbar-item>
             </b-navbar-dropdown>
         </template>
@@ -79,6 +79,9 @@ export default {
     .items {
         font-size: 20px;
     }
+}
+a {
+    margin: 0 7px;
 }
 
 .buttons {

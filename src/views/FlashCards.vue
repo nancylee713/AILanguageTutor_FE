@@ -28,14 +28,8 @@ export default {
   data() {
     return {
       flashcards: [],
-      cardIndex: 5,
+      cardIndex: 0,
       audioSource: '',
-    }
-  },
-  data() {
-    return {
-      flashcards: [],
-      cardIndex: 5,
     }
   },
   methods: {
@@ -71,7 +65,7 @@ export default {
 <style lang='scss'>
 .flashcard-component {
   display: flex;
-  height: 70vh;
+  height: 90vh;
   justify-content: space-evenly;
 
   .cards-container {
@@ -83,19 +77,19 @@ export default {
       height: 100%;
       display: flex;
       flex-direction: column;
-      padding: 6%;
+      padding: 2%;
       justify-content: space-evenly;
 
       .card-title {
-        font-size: 50px;
+        font-size: 3em;
         font-weight: bold;
       }
       .card-def {
-        font-size: 22px;
+        font-size: 1.5em;
         font-weight: 400;
       }
       .card-pos {
-        font-size: 28px;
+        font-size: 1.8em;
       }
       audio {
         align-self: center;
