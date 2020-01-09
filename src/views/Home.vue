@@ -43,6 +43,7 @@ import AudioRecorder from 'vue-audio-recorder'
   }
   img {
         width: 100px;
+        margin: 0 px;
       }  
   .home {
     align-items: center;
@@ -56,18 +57,19 @@ import AudioRecorder from 'vue-audio-recorder'
       display: flex;
       text-align: center;
       align-items: center;
-      margin:  45px auto;
+      margin:  25px auto;
       width: 40%;
     }
     
     .flashcards-section {
       display: flex;
       align-items: center;
-      margin:  45px auto;
+      margin:  30px auto;
       width: 40%;
     }
     button {
-      height: 60px;
+      margin: 3px;
+      height: 50px;
     }
   }
 </style>
