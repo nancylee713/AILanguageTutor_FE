@@ -17,6 +17,14 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  outline: none;
+}
+html {
+  height: 100vh;
+  background: rgb(255, 250, 250);
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

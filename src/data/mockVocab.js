@@ -7,3 +7,5 @@ const vocabWords = [
     'hat',
     'jelly'
 ]
+
+export default vocabWords;

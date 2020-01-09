@@ -1,7 +1,6 @@
 <template>
   <section class='grammar-component'>
     <div class='previous'>
-      <p>Previous Question</p>
       <button v-on:click='previousQuestion'>Back button</button>
     </div>
     <div class='content'>
@@ -19,7 +18,6 @@
       </div>
     </div>
     <div class='next'>
-      <p>Next Question</p>
       <button v-on:click='nextQuestion'>Next Button</button>
     </div>
   </section>
@@ -65,18 +63,21 @@ export default {
         reviewGrammar(this.userInput)
           .then(data => this.correctedGrammar = data);
       }
+      this.userInput = '';
     },
     nextQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== this.questions.length - 1) {
         this.currentQuestion = this.questions[i + 1];
       }
+      this.userInput = '';
     },
     previousQuestion: function() {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== 0) {
         this.currentQuestion = this.questions[i - 1];
       }
+      this.userInput = '';
     }
   },
   mounted() {
@@ -91,9 +92,11 @@ export default {
 <style>
   .grammar-component {
     display: flex;
+    height: 95vh;
   }
 
   .previous {
+    align-items: center;
     border: 1px solid black;
     border-right: none;
     display: flex !important;
@@ -106,6 +109,7 @@ export default {
   .content {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    padding-top: 8%;
     margin: 0px !important;
     width: 50% !important;
   }
@@ -120,6 +124,7 @@ export default {
   }
 
   .next {
+    align-items: center;
     border: 1px solid black;
     border-left: none;
     display: flex !important;
@@ -146,8 +151,9 @@ export default {
     color: white;
     font-size: .9em;
     height: 40px;
-    margin: 10px;
+    margin: auto;
     width: 150px;
+
   }
 
   button:hover {
