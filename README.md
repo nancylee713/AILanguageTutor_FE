@@ -8,25 +8,25 @@ The site is deployed live on [Heroku](https://language-learner-app.herokuapp.com
 
 This project was an opportunity to teach ourselves a new framework and new tools associated with it! The tech included is:
 
-Vue.js
+- Vue.js
 
-Vue.js Router
+- Vue.js Router
 
-SASS
+- SASS
 
-Jest
+- Jest
 
-Enzyme
+- Enzyme
 
-Buefy
+- Buefy
 
-Perfect Tense API
+- Perfect Tense API
 
-LinguaRobot API
+- LinguaRobot API
 
-[AILanguageTutor_BE](https://github.com/nancylee713/AILanguageTutor_BE) made by out back end counterparts in Python.
+- [AILanguageTutor_BE](https://github.com/nancylee713/AILanguageTutor_BE) made by out back end counterparts in Python.
 
-[GitHub Projects](https://github.com/users/nancylee713/projects/1)
+- [GitHub Projects](https://github.com/users/nancylee713/projects/1)
 
 ## Setup
 
