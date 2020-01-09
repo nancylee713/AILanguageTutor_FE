@@ -9,7 +9,7 @@
         <p class='card-def'>Definition: {{flashcards[cardIndex].entries[0].lexemes[0].senses[0].definition}}</p>
         <p class='card-pos'>Part of Speech: {{flashcards[cardIndex].entries[0].interpretations[0].partOfSpeech}}</p>
         <audio controls>
-        <source v-bind:src='audioSource'>
+        <source v-bind:src='this.audioSource = this.flashcards[this.cardIndex].entries[0].pronunciations[0].audio.url'>
         </audio>  
       </div>
     </div>

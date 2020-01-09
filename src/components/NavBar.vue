@@ -2,7 +2,10 @@
   <b-navbar class='navbar'>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                <h1>Language Learner</h1>
+                <div class='logo'>
+                    <h1>Language</h1>
+                    <h1>Learner</h1>
+                </div>
             </b-navbar-item>
         </template>
         <template slot="start">
@@ -64,10 +67,14 @@ export default {
     height: 10vh;
     background: rgb(202, 188, 216);
     font-weight: 500;
-    h1 {
-        font-size: 35px;
-        font-weight: 600;
-        font-family: 'Rubik', sans-serif;
+    .logo {
+        margin: .4em 1.5em 0 1.5em;
+        h1 {
+            font-size: 30px;
+            font-weight: 600;
+            font-family: 'Rubik', sans-serif;
+            margin: -15px;
+        }
     }
     .items {
         font-size: 20px;
