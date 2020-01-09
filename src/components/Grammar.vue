@@ -1,7 +1,6 @@
 <template>
   <section class='grammar-component'>
     <div class='previous'>
-      <p>Previous Question</p>
       <button v-on:click='previousQuestion'>Back button</button>
     </div>
     <div class='content'>
@@ -19,7 +18,6 @@
       </div>
     </div>
     <div class='next'>
-      <p>Next Question</p>
       <button v-on:click='nextQuestion'>Next Button</button>
     </div>
   </section>
@@ -71,7 +69,7 @@ export default {
       const i = this.questions.indexOf(this.currentQuestion);
       if(i !== this.questions.length - 1) {
         this.currentQuestion = this.questions[i + 1];
-      } 
+      }
       this.userInput = '';
     },
     previousQuestion: function() {
@@ -156,8 +154,9 @@ export default {
     color: white;
     font-size: .9em;
     height: 40px;
-    margin: 10px;
+    margin: auto;
     width: 150px;
+
   }
 
   button:hover {

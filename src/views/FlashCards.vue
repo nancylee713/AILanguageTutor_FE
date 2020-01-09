@@ -7,9 +7,9 @@
       <div class='card'>
         <h3 class='card-title'>{{flashcards[cardIndex].entries[0].entry}}</h3>
         <p class='card-def'>Definition: {{flashcards[cardIndex].entries[0].lexemes[0].senses[0].definition}}</p>
-        <p class='card-def'>Part of Speech: {{flashcards[cardIndex].entries[0].interpretations[0].partOfSpeech}}</p>
+        <p class='card-pos'>Part of Speech: {{flashcards[cardIndex].entries[0].interpretations[0].partOfSpeech}}</p>
         <audio controls>
-        <source src='http://audio.linguarobot.io/en/dog-us.mp3'>
+        <source v-bind:src='this.audioSource = this.flashcards[this.cardIndex].entries[0].pronunciations[0].audio.url'>
         </audio>  
       </div>
     </div>
@@ -26,8 +26,12 @@ import vocabWords from '../data/mockVocab';
 
 export default {
   name: 'flashcards',
-  components: {
-      Cards,
+  data() {
+    return {
+      flashcards: [],
+      cardIndex: 5,
+      audioSource: '',
+    }
   },
   data() {
     return {
@@ -40,14 +44,19 @@ export default {
       return getFlashCard(word)
     },
     nextFlashCard() {
-      if (this.cardIndex < this.flashcards.length) {
+      if (this.cardIndex < this.flashcards.length + 1) {
         this.cardIndex++
+        this.retrieveAudio()
       }
     },
     previousFlashCard() {
       if (this.cardIndex > 0) {
         this.cardIndex--
+        this.retrieveAudio()
       }
+    },
+    retrieveAudio() {
+      this.audioSource = this.flashcards[this.cardIndex].entries[0].pronunciations[0].audio.url;
     } 
 
   },
@@ -69,6 +78,30 @@ export default {
   .cards-container {
     width: 60%;
     border: solid 2px black;
+    border-radius: 4px;
+    margin: 8%;
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 6%;
+      justify-content: space-evenly;
+
+      .card-title {
+        font-size: 50px;
+        font-weight: bold;
+      }
+      .card-def {
+        font-size: 22px;
+        font-weight: 400;
+      }
+      .card-pos {
+        font-size: 28px;
+      }
+      audio {
+        align-self: center;
+      }
+    }
   }
   .previous-card,
   .next-card{
