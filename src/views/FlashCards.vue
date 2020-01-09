@@ -21,6 +21,7 @@
 
 <script>
 import { getFlashCard } from '@/api/apiCalls';
+import Cards from '@/components/Cards.vue';
 import vocabWords from '../data/mockVocab';
 
 export default {
@@ -30,6 +31,12 @@ export default {
       flashcards: [],
       cardIndex: 5,
       audioSource: '',
+    }
+  },
+  data() {
+    return {
+      flashcards: [],
+      cardIndex: 5,
     }
   },
   methods: {
@@ -50,9 +57,6 @@ export default {
     },
     retrieveAudio() {
       this.audioSource = this.flashcards[this.cardIndex].entries[0].pronunciations[0].audio.url;
-    },
-    toggle: function(){
-      this.isOpen = !this.isOpen
     } 
 
   },
@@ -68,7 +72,7 @@ export default {
 <style lang='scss'>
 .flashcard-component {
   display: flex;
-  height: 80vh;
+  height: 70vh;
   justify-content: space-evenly;
 
   .cards-container {

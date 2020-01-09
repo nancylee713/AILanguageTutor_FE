@@ -110,6 +110,9 @@ export default {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     padding-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0px !important;
     width: 50% !important;
   }
