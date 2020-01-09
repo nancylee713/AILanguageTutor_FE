@@ -1,30 +1,27 @@
 <template>
-  <b-navbar>
+  <b-navbar class='navbar'>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                <img
-                    src='../assets/teacher.png'
-                    alt="Teacher logo"
-                >
+                <h1>Language Learner</h1>
             </b-navbar-item>
         </template>
         <template slot="start">
-            <b-navbar-item href="#">
+            <b-navbar-item class='items' href="#">
                 <router-link to='/'>
                     Home
                 </router-link>
             </b-navbar-item>
-            <b-navbar-item href="#">
+            <b-navbar-item class='items' href="#">
                 <router-link to='/grammar'>
                     Grammar Tests
                 </router-link>
             </b-navbar-item>
-            <b-navbar-item href="#">
+            <b-navbar-item class='items' href="#">
                 <router-link to='/flashcards'>
                     Flash Cards
                 </router-link>
             </b-navbar-item>
-            <b-navbar-dropdown label="Account">
+            <b-navbar-dropdown class='items' label="Account">
                 <b-navbar-item href="#">
                     View Account
                 </b-navbar-item>
@@ -61,6 +58,22 @@ export default {
 </script>
 
 <style lang='scss'>
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+.navbar {
+    height: 10vh;
+    background: rgb(202, 188, 216);
+    font-weight: 500;
+    h1 {
+        font-size: 35px;
+        font-weight: 600;
+        font-family: 'Rubik', sans-serif;
+    }
+    .items {
+        font-size: 20px;
+    }
+}
+
 .buttons {
     margin: 0 10px;
 }

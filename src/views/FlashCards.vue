@@ -21,20 +21,15 @@
 
 <script>
 import { getFlashCard } from '@/api/apiCalls';
-import Cards from '@/components/Cards.vue';
 import vocabWords from '../data/mockVocab';
 
 export default {
   name: 'flashcards',
-  components: {
-      Cards,
-  },
   data() {
     return {
       flashcards: [],
       cardIndex: 5,
       audioSource: '',
-      isOpen: false
     }
   },
   methods: {
@@ -80,17 +75,27 @@ export default {
     width: 60%;
     border: solid 2px black;
     border-radius: 4px;
-    margin-top: 10px;
+    margin: 8%;
     .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 6%;
+      justify-content: space-evenly;
+
       .card-title {
         font-size: 50px;
         font-weight: bold;
       }
       .card-def {
-
+        font-size: 22px;
+        font-weight: 400;
       }
       .card-pos {
-        
+        font-size: 28px;
+      }
+      audio {
+        align-self: center;
       }
     }
   }
