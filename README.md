@@ -55,6 +55,14 @@ Front End: [Victor Abraham](https://github.com/VPAbraham) and [Noah Gibson](http
 Back End: [Nancy Lee](https://github.com/nancylee713) and [Scott Schipke](https://github.com/sschipke)
 
 ## Screenshots:
+Landing page
+
 <img width="1790" alt="Screen Shot 2020-01-09 at 10 30 20 AM" src="https://user-images.githubusercontent.com/30779453/72090504-70c61100-32cb-11ea-959e-9448fc55c68a.png">
+
+Grammar testing
+
 <img width="1792" alt="Screen Shot 2020-01-09 at 10 30 44 AM" src="https://user-images.githubusercontent.com/30779453/72090507-71f73e00-32cb-11ea-8725-f0f501c5172f.png">
+
+Flash Cards practice
+
 <img width="1792" alt="Screen Shot 2020-01-09 at 10 31 00 AM" src="https://user-images.githubusercontent.com/30779453/72090509-73c10180-32cb-11ea-8860-b68ce469ff6b.png">
