@@ -1,7 +1,26 @@
 <template>
   <div class="home">
-    <h1>Language Learner</h1>
-    <h2 class='welcome'>Welcome to Language Learner where we are commited to assisting your language learning needs!</h2>
+
+    <div class='head'>
+      <h1>Welcome to Language Learner</h1>
+      <h2 class='welcome'>Welcome to Language Learner where we are commited to assisting your language learning needs!</h2>
+      <h2 class='choose'>Choose your language practice path.</h2>
+    </div>
+    
+    <section class='grammar-section'>
+      <img class='grammar-icon'src='../assets/english.png' />
+      <p>Practice English phrase grammar with correction activities.</p>
+    </section>
+    <router-link to='grammar'>
+      <button>Practice Grammar</button>
+    </router-link>
+    <section class='flashcards-section'>
+      <img class='flashcards-icon'src='../assets/inspection.png' />
+      <p>Train yourself on English verbiage, definitions, and usage with term flashcards.</p>
+    </section>
+    <router-link to='flashcards'>
+      <button>Practice with Flashcards</button>    
+    </router-link>
   </div>
 </template>
 
@@ -14,15 +33,37 @@ export default {
 import AudioRecorder from 'vue-audio-recorder'
 </script>
 
-<style>
+<style lang='scss'>
   h1 {
     font-size: 2em;
     margin: 40px;
   }
+  img {
+        width: 100px;
+      }  
+  .home {
+    align-items: center;
+    .choose {
+      margin: 5%;
+      font-size: 30px;
+      font-weight: 700;
+    }
 
-  .welcome  {
-    font-size: 1.5em;
-    width: 80%;
-    margin: auto;
+    .grammar-section {
+      display: flex;
+      align-items: center;
+      margin:  45px auto;
+      width: 50%;
+    }
+    
+    .flashcards-section {
+      display: flex;
+      align-items: center;
+      margin:  45px auto;
+      width: 40%;
+    }
+    button {
+      height: 60px;
+    }
   }
 </style>

@@ -1,4 +1,5 @@
 const vocabWords = [
+    'pants',
     'dog',
     'restaurant',
     'pencil',
