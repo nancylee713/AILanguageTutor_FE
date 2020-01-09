@@ -11,6 +11,7 @@ export default {
   components: {
   },
 };
+import AudioRecorder from 'vue-audio-recorder'
 </script>
 
 <style>
