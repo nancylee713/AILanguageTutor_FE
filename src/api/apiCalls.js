@@ -1,7 +1,5 @@
 export const getQuestions = async () => {
   const url = process.env.VUE_APP_GRAMMAR_QUESTIONS_ROUTE;
-  console.log(process.env.VUE_APP_GRAMMAR_QUESTIONS_ROUTE);
-  console.log(typeof process.env.VUE_APP_GRAMMAR_QUESTIONS_ROUTE);
   try {
     const response = await fetch(url);
     if (!response.ok) {
