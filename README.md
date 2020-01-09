@@ -4,6 +4,8 @@ Language Learner is a tool designed to assist an intermediate student in pronunc
 
 The site is deployed live on [Heroku](https://language-learner-app.herokuapp.com/#/)
 
+A large portion of the project period was spent planning the structure, usage, and APIs.  The process can be seen on our kanban project board [Located here](https://github.com/users/nancylee713/projects/1)
+
 ## Tech
 
 This project was an opportunity to teach ourselves a new framework and new tools associated with it! The tech included is:
