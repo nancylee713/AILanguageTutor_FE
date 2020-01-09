@@ -21,7 +21,6 @@
 
 <script>
 import { getFlashCard } from '@/api/apiCalls';
-import Cards from '@/components/Cards.vue';
 import vocabWords from '../data/mockVocab';
 
 export default {
