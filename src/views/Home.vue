@@ -38,6 +38,9 @@ import AudioRecorder from 'vue-audio-recorder'
     font-size: 2em;
     margin: 40px;
   }
+  .welcome {
+    font-size: 20px; 
+  }
   img {
         width: 100px;
       }  
@@ -51,9 +54,10 @@ import AudioRecorder from 'vue-audio-recorder'
 
     .grammar-section {
       display: flex;
+      text-align: center;
       align-items: center;
       margin:  45px auto;
-      width: 50%;
+      width: 40%;
     }
     
     .flashcards-section {
