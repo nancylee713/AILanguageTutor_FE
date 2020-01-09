@@ -6,7 +6,8 @@ The site is deployed live on [Heroku](https://language-learner-app.herokuapp.com
 
 ## Tech
 
-This project was an opportunity to teach ourselves a new framework and new tools associated with it! The tech included is: 
+This project was an opportunity to teach ourselves a new framework and new tools associated with it! The tech included is:
+
 Vue.js
 Vue.js Router
 SASS
