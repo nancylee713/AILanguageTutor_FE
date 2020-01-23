@@ -13,6 +13,16 @@
                 maxlength="40">
             </b-input>
         </b-field>
+        <b-field label="Proficiency" for="proficiency">
+            <b-select class="input-field select" id="proficiency" required value="" placeholder="Proficiency level" v-model="account.proficiency">
+                <option value="Beginner" defaultValue>Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </b-select>
+        </b-field>
+        <b-field label="Age">
+            <b-input class='input-field' required value="" type="number" placeholder="Please enter your age" v-model="account.age" min="16" max="105"></b-input>
+        </b-field>
         <b-field label="Username">
             <b-input class='input-field' required value="" placeholder="Please enter your username" v-model="account.username" maxlength="20"></b-input>
         </b-field>
@@ -26,7 +36,7 @@
 
 <script>
 
-import {createAccount} from '../api/apiCalls.js'
+import {createAccount, createUserProfile} from '../api/apiCalls.js'
 
 export default {
   name: 'sign up form',
@@ -35,15 +45,18 @@ export default {
         account: {
             name: null,
             username: null,
+            age: null,
             email: null,
-            password: null
+            password: null,
+            proficiency: null
         }
     }
   },
   methods: {
-    handleSubmit(){
-        console.log({...this.account})
+    handleSubmit(e){
         createAccount({...this.account})
+        .then(res => createUserProfile({...res, ...this.account}))
+        .then(res => {e.target.reset())
         .catch(err => console.error(err))
     }
 },
@@ -61,5 +74,8 @@ export default {
     .input-field {
         width: 70%;
         margin: 0 auto
+    }
+    .select {
+
     }
 </style>
