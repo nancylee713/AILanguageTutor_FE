@@ -7,23 +7,26 @@
         <b-field label="Email">
             <b-input class='input-field' type="email"
                 required
+                placeholder="Please enter your email"
                 v-model="account.email"
                 value=""
                 maxlength="40">
             </b-input>
         </b-field>
         <b-field label="Username">
-            <b-input class='input-field' required value="" v-model="account.username" maxlength="20"></b-input>
+            <b-input class='input-field' required value="" placeholder="Please enter your username" v-model="account.username" maxlength="20"></b-input>
         </b-field>
 
         <b-field label="Password">
-            <b-input class='input-field' required value="" v-model="account.password" type="password" maxlength="30"></b-input>
+            <b-input class='input-field' required value="" v-model="account.password" type="password" maxlength="30" placeholder="Please enter your password"></b-input>
         </b-field>
         <button type="submit" outlined>Submit</button>
     </form>
 </template>
 
 <script>
+
+import {createAccount} from '../api/apiCalls.js'
 
 export default {
   name: 'sign up form',
@@ -40,6 +43,8 @@ export default {
   methods: {
     handleSubmit(){
         console.log({...this.account})
+        createAccount({...this.account})
+        .catch(err => console.error(err))
     }
 },
   mounted() {
