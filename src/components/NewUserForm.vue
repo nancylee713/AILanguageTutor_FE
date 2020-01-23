@@ -56,7 +56,7 @@ export default {
     handleSubmit(e){
         createAccount({...this.account})
         .then(res => createUserProfile({...res, ...this.account}))
-        .then(res => {e.target.reset())
+        .then(res => e.target.reset())
         .catch(err => console.error(err))
     }
 },
