@@ -30,7 +30,7 @@
         <b-field label="Password">
             <b-input class='input-field' required value="" v-model="account.password" type="password" maxlength="30" placeholder="Please enter your password"></b-input>
         </b-field>
-        <button type="submit" outlined>Submit</button>
+        <button type="submit" outlined>Sign Up</button>
     </form>
 </template>
 
