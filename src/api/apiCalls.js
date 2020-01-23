@@ -35,6 +35,27 @@ export const createAccount = async (userInfo) => {
   }
 };
 
+export const createUserProfile = async (userProfile) => {
+  const url = `http://localhost:5000/create_user_profile`;
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userProfile),
+  };
+  try {
+    const response = await fetch(url, options);
+  
+    if (!response.ok) {
+      throw new Error('There was an error in creating the profile for this user');
+    }
+    return response.json()
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export const reviewGrammar = async (userSentence) => {
   const url = process.env.VUE_APP_PERFECT_TENSE_ROUTE;
   const body = { text: userSentence, responseType: ['corrected', 'grammarScore', 'rulesApplied', 'offset', 'summary'] };
