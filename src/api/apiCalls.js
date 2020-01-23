@@ -35,6 +35,27 @@ export const createAccount = async (userInfo) => {
   }
 };
 
+export const logUserIn = async (userProfile) => {
+  const url = `http://localhost:5000/login`;
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userProfile),
+  };
+  try {
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+      throw new Error('There was an error logging in');
+    }
+    return response.json()
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export const createUserProfile = async (userProfile) => {
   const url = `http://localhost:5000/create_user_profile`;
   const options = {
