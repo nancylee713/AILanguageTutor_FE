@@ -42,9 +42,11 @@
                             <strong>Sign up</strong>
                         </a>
                     </router-link>
-                    <a class="button is-light">
-                        Log in
-                    </a>
+                    <router-link to='/login'>
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </router-link>
                 </div>
             </b-navbar-item>
         </template>
