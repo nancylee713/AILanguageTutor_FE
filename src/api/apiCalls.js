@@ -13,7 +13,7 @@ export const getQuestions = async () => {
 };
 
 export const createAccount = async (userInfo) => {
-  const url = `http://localhost:5000/signup`;
+  const url = `${process.env.VUE_APP_BACKEND_BASE_URL}/signup`;
   const options = {
     method: 'POST',
     headers: {
@@ -36,7 +36,7 @@ export const createAccount = async (userInfo) => {
 };
 
 export const logUserIn = async (userProfile) => {
-  const url = `http://localhost:5000/login`;
+  const url = `${process.env.VUE_APP_BACKEND_BASE_URL}/login`;
   const options = {
     method: 'POST',
     headers: {
@@ -57,7 +57,7 @@ export const logUserIn = async (userProfile) => {
 };
 
 export const createUserProfile = async (userProfile) => {
-  const url = `http://localhost:5000/create_user_profile`;
+  const url = `${process.env.VUE_APP_BACKEND_BASE_URL}/create_user_profile`;
   const options = {
     method: 'POST',
     headers: {
