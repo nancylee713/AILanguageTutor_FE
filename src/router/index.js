@@ -5,6 +5,7 @@ import Grammar from '../components/Grammar.vue';
 import FlashCards from '../views/FlashCards.vue';
 import User from '../components/User.vue';
 import CreateUser from '../views/CreateUser.vue';
+import LoginForm from '../components/LoginForm'
 
 
 Vue.use(VueRouter);
@@ -35,6 +36,11 @@ const routes = [
     name: 'create_user',
     component: CreateUser,
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginForm,
+  }
 ];
 
 const router = new VueRouter({

@@ -12,6 +12,71 @@ export const getQuestions = async () => {
   }
 };
 
+export const createAccount = async (userInfo) => {
+  const url = `${process.env.VUE_APP_BACKEND_BASE_URL}/signup`;
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userInfo),
+  };
+  try {
+    const response = await fetch(url, options);
+    if(response.status === 409) {
+      throw Error('This email has already been used')
+    }
+    if (!response.ok) {
+      throw new Error('There was an error in creating the account');
+    }
+    return response.json()
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const logUserIn = async (userProfile) => {
+  const url = `${process.env.VUE_APP_BACKEND_BASE_URL}/login`;
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userProfile),
+  };
+  try {
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+      throw new Error('There was an error logging in');
+    }
+    return response.json()
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const createUserProfile = async (userProfile) => {
+  const url = `${process.env.VUE_APP_BACKEND_BASE_URL}/create_user_profile`;
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userProfile),
+  };
+  try {
+    const response = await fetch(url, options);
+  
+    if (!response.ok) {
+      throw new Error('There was an error in creating the profile for this user');
+    }
+    return response.json()
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export const reviewGrammar = async (userSentence) => {
   const url = process.env.VUE_APP_PERFECT_TENSE_ROUTE;
   const body = { text: userSentence, responseType: ['corrected', 'grammarScore', 'rulesApplied', 'offset', 'summary'] };
