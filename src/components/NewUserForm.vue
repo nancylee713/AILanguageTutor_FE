@@ -75,7 +75,7 @@ export default {
         width: 70%;
         margin: 0 auto
     }
-    .select {
-
+    div.control.input-field.select::after {
+        display: none;
     }
 </style>
