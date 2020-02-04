@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="handleSubmit" class='signup-form'>
         <b-field label="Name">
-            <b-input class='input-field' required v-model="account.name" value="" maxlength="40" placeholder="Please enter your name"></b-input>
+            <b-input class='input-field' required v-model="account.name" value="account.name" maxlength="40" placeholder="Please enter your name"></b-input>
         </b-field>
 
         <b-field label="Email">
@@ -9,25 +9,21 @@
                 required
                 placeholder="Please enter your email"
                 v-model="account.email"
-                value=""
+                value="account.email"
                 maxlength="40">
             </b-input>
         </b-field>
         <b-field label="Proficiency" for="proficiency">
-            <b-select class="input-field select" id="proficiency" required value="" placeholder="Proficiency level" v-model="account.proficiency">
+            <b-select class="input-field select" id="proficiency" required value="account.proficiency" placeholder="Proficiency level" v-model="account.proficiency">
                 <option value="Beginner" defaultValue>Beginner</option>
                 <option value="Intermediate">Intermediate</option>
                 <option value="Advanced">Advanced</option>
             </b-select>
         </b-field>
         <b-field label="Age">
-            <b-input class='input-field' required value="" type="number" placeholder="Please enter your age" v-model="account.age" min="16" max="105"></b-input>
+            <b-input class='input-field' required value="account.age" type="number" placeholder="Please enter your age" v-model="account.age" min="16" max="105"></b-input>
         </b-field>
-
-        <b-field label="Password">
-            <b-input class='input-field' required value="" v-model="account.password" type="password" maxlength="30" placeholder="Please enter your password"></b-input>
-        </b-field>
-        <button type="submit" outlined>Sign Up</button>
+        <button type="submit" outlined>Update Account</button>
     </form>
 </template>
 
@@ -37,17 +33,12 @@ import {createAccount, createUserProfile} from '../api/apiCalls.js'
 import { mapState } from 'vuex'
 
 export default {
-  name: 'signUpForm',
+  name: 'account_overview',
   data() {
     return {
         account: {
-            name: null,
-            username: null,
-            age: null,
-            email: null,
-            password: null,
-            proficiency: null
-        }
+        ...this.$store.state.user
+      }
     }
   },
   methods: {
@@ -62,7 +53,6 @@ export default {
     }
 },
   mounted() {
-
   }
 }
 

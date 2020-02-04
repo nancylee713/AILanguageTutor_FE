@@ -11,7 +11,7 @@ export default new Vuex.Store({
     user: null
   },
   getters: {
-    getUser: state => state.user
+    getUser: state => { return state.user}
   },
   mutations: {
     SET_USER (state, user) {
