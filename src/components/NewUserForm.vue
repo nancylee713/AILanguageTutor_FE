@@ -37,9 +37,10 @@
 <script>
 
 import {createAccount, createUserProfile} from '../api/apiCalls.js'
+import { mapState } from 'vuex'
 
 export default {
-  name: 'sign up form',
+  name: 'signUpForm',
   data() {
     return {
         account: {
@@ -56,7 +57,11 @@ export default {
     handleSubmit(e){
         createAccount({...this.account})
         .then(res => createUserProfile({...res, ...this.account}))
-        .then(res => e.target.reset())
+        .then(res => {
+            e.target.reset()
+            console.log('new user res --->', res)
+            this.$store.dispatch('setUser', res)
+        })
         .catch(err => console.error(err))
     }
 },
