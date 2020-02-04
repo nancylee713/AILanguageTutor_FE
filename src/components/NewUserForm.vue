@@ -59,7 +59,6 @@ export default {
         .then(res => createUserProfile({...res, ...this.account}))
         .then(res => {
             e.target.reset()
-            console.log('new user res --->', res)
             this.$store.dispatch('setUser', res)
         })
         .catch(err => console.error(err))
