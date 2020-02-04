@@ -117,7 +117,13 @@ export const getFlashCard = async (vocabWord) => {
       throw new Error('Could not retrieve this flashcard.');
     }
     const data = await response.json();
-    return data;
+    const cleanData = {
+      word: data.entries[0].entry,
+      definition: data.entries[0].lexemes[0].senses[0].definition,
+      pos: data.entries[0].interpretations[0].partOfSpeech,
+      audio: data.entries[0].pronunciations[0].audio.url
+    };
+    return cleanData;
   } catch (error){
     throw new Error(error);
   }
