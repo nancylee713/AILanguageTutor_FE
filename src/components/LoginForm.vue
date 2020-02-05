@@ -19,6 +19,8 @@
 <script>
 
 import {logUserIn} from '../api/apiCalls.js'
+import { mapState } from 'vuex'
+
 
 export default {
   name: 'LoginForm',
@@ -33,8 +35,10 @@ export default {
   methods: {
     handleSubmit(e){
         logUserIn({...this.account})
-        .then(res => console.log(res))
-        .then(res => e.target.reset())
+        .then(res => {
+            this.$store.dispatch('setUser', res)
+            e.target.reset()
+            })
         .catch(err => console.error(err))
     }
 },

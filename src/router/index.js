@@ -6,6 +6,7 @@ import FlashCards from '../views/FlashCards.vue';
 import User from '../components/User.vue';
 import CreateUser from '../views/CreateUser.vue';
 import LoginForm from '../components/LoginForm'
+import AccountOverview from '../components/AccountOverview'
 
 
 Vue.use(VueRouter);
@@ -40,6 +41,12 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginForm,
+  },
+  {
+    path: '/account',
+    name: 'account_overview',
+    component: AccountOverview
+
   }
 ];
 

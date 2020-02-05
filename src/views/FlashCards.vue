@@ -5,11 +5,11 @@
     </div>
     <div class='cards-container'>
       <div class='card'>
-        <h3 class='card-title'>{{flashcards[cardIndex].entries[0].entry}}</h3>
-        <p class='card-def'>Definition: {{flashcards[cardIndex].entries[0].lexemes[0].senses[0].definition}}</p>
-        <p class='card-pos'>Part of Speech: {{flashcards[cardIndex].entries[0].interpretations[0].partOfSpeech}}</p>
-        <audio controls>
-        <source v-bind:src='this.audioSource = this.flashcards[this.cardIndex].entries[0].pronunciations[0].audio.url'>
+        <h3 class='card-title'>{{currentCard.word}}</h3>
+        <p class='card-def'>Definition: {{currentCard.definition}}</p>
+        <p class='card-pos'>Part of Speech: {{currentCard.pos}}</p>
+        <audio controls :key='currentCard.audio' >
+        <source v-bind:src='currentCard.audio'>
         </audio>  
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
     return {
       flashcards: [],
       cardIndex: 0,
-      audioSource: '',
+      currentCard: {}
     }
   },
   methods: {
@@ -37,26 +37,26 @@ export default {
       return getFlashCard(word)
     },
     nextFlashCard() {
-      if (this.cardIndex < this.flashcards.length + 1) {
+      console.log(this.cardIndex)
+      if (this.cardIndex < this.flashcards.length - 1) {
         this.cardIndex++
-        this.retrieveAudio()
+        // this.retrieveAudio()
+        this.currentCard = this.flashcards[this.cardIndex]
       }
     },
     previousFlashCard() {
       if (this.cardIndex > 0) {
         this.cardIndex--
-        this.retrieveAudio()
+        this.currentCard = this.flashcards[this.cardIndex]
       }
     },
-    retrieveAudio() {
-      this.audioSource = this.flashcards[this.cardIndex].entries[0].pronunciations[0].audio.url;
-    } 
 
   },
   mounted(){
     vocabWords.map(word => {
       this.getDefinition(word)
       .then(response => this.flashcards.push(response))
+      .then(res => this.currentCard=this.flashcards[0])
     })
   }
 };

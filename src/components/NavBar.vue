@@ -26,7 +26,9 @@
             </b-navbar-item>
             <b-navbar-dropdown class='items' label="Account">
                 <b-navbar-item class='acct-button' href="#">
+                    <router-link to='/account'>
                     View Account
+                    </router-link>
                 </b-navbar-item>
                 <b-navbar-item href="#">
                     Log Out
