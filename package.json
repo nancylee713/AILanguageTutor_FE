@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "jest-serializer-vue": "^2.0.2",
-    "serve": "^11.2.0",
+    "serve": "^14.2.0",
     "serve-static": "^1.14.1",
     "vue": "^2.6.10",
     "vue-audio-recorder": "^3.0.1",
